@@ -1,4 +1,5 @@
 import random
+import time
 from card import Card
 from enemy import Enemy
 from player import Player
@@ -29,7 +30,9 @@ while player.health > 0 and goblin.health > 0:
     player.showcard()
     played = int(input("Choose your card "))
     player.playcard(played, goblin)
+    time.sleep(1)
     if goblin.health <= 0:
         break
     print(f"{goblin.name}'s Turn")
     goblin.chooseCard(player)
+    time.sleep(1)
